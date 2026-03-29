@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
+import InteractiveCard from '../components/InteractiveCard';
 import { categories, projects } from '../data/projects';
 
 export default function GraphicDesigning() {
@@ -18,12 +19,12 @@ export default function GraphicDesigning() {
       </p>
       <SectionTitle title="Graphic Designing" subtitle="Design Portfolio" />
 
-      <div className="mb-8 rounded-3xl border border-ink/10 bg-white/80 p-6 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/30">
+      <InteractiveCard className="mb-8 rounded-3xl border border-ink/10 bg-white/80 p-6 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/30">
         <p className="max-w-3xl text-lg leading-relaxed text-ink/80 dark:text-paper/80">
           Creative design work across branding, social media, UI/UX, event posters, wedding invitations, birthday
           creatives, and more.
         </p>
-      </div>
+      </InteractiveCard>
 
       <div className="mb-10 flex flex-wrap gap-2 rounded-2xl border border-ink/10 bg-white/70 p-3 dark:border-paper/10 dark:bg-ink/30">
         {categories.map((category) => (

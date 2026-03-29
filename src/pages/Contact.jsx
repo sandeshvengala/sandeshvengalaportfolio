@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import SectionTitle from '../components/SectionTitle';
+import InteractiveCard from '../components/InteractiveCard';
 import { contactEmail, contactEndpoint, contactLocation, contactPhone, socialLinks } from '../data/siteContent';
 
 export default function Contact() {
@@ -67,7 +68,7 @@ export default function Contact() {
       <SectionTitle title="Contact" subtitle="Start a Project" />
 
       <div className="grid gap-10 md:grid-cols-[1fr_1.1fr]">
-        <motion.div
+        <InteractiveCard
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -99,7 +100,7 @@ export default function Contact() {
               </a>
             ))}
           </div>
-        </motion.div>
+        </InteractiveCard>
 
         <motion.form
           initial={{ opacity: 0, y: 20 }}

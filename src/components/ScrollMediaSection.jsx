@@ -1,5 +1,5 @@
 ﻿import { useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
+import InteractiveCard from './InteractiveCard';
 
 const sampleThemes = {
   realistic: [
@@ -90,7 +90,7 @@ export default function ScrollMediaSection() {
 
       <div className="mb-10 grid gap-6 md:grid-cols-3">
         {sampleImages.map((item, index) => (
-          <motion.article
+          <InteractiveCard
             key={item.title}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,13 +100,13 @@ export default function ScrollMediaSection() {
           >
             <img src={item.src} alt={item.title} className="h-56 w-full object-cover" loading="lazy" />
             <p className="px-4 py-3 text-sm font-semibold">{item.title}</p>
-          </motion.article>
+          </InteractiveCard>
         ))}
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
         {sampleVideos.map((item, index) => (
-          <motion.article
+          <InteractiveCard
             key={item.title}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ export default function ScrollMediaSection() {
               playsInline
             />
             <p className="px-4 py-3 text-sm font-semibold text-white/90">{item.title}</p>
-          </motion.article>
+          </InteractiveCard>
         ))}
       </div>
     </section>

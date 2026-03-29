@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
-import { motion } from 'framer-motion';
+import InteractiveCard from '../components/InteractiveCard';
 
 export default function Projects() {
   return (
@@ -18,7 +18,7 @@ export default function Projects() {
       </div>
 
       <div className="grid gap-8 md:grid-cols-2">
-        <motion.article
+        <InteractiveCard
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -37,9 +37,9 @@ export default function Projects() {
           >
             Open
           </Link>
-        </motion.article>
+        </InteractiveCard>
 
-        <motion.article
+        <InteractiveCard
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -57,7 +57,7 @@ export default function Projects() {
           >
             Open
           </Link>
-        </motion.article>
+        </InteractiveCard>
       </div>
     </section>
   );

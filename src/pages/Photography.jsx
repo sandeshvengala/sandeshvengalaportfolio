@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle';
+import InteractiveCard from '../components/InteractiveCard';
 import { photoCategories, photographyProjects } from '../data/photography';
 
 export default function Photography() {
@@ -44,7 +44,7 @@ export default function Photography() {
 
       <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
         {filteredPhotos.map((photo, index) => (
-          <motion.article
+          <InteractiveCard
             key={photo.id}
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ export default function Photography() {
               <h3 className="mb-2 text-xl font-semibold">{photo.title}</h3>
               <p className="text-sm text-ink/75 dark:text-paper/80">{photo.description}</p>
             </div>
-          </motion.article>
+          </InteractiveCard>
         ))}
       </div>
     </section>

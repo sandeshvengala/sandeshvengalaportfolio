@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import InteractiveCard from './InteractiveCard';
 
 export default function ProjectCard({ project, index = 0 }) {
   return (
-    <motion.article
+    <InteractiveCard
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -34,6 +34,6 @@ export default function ProjectCard({ project, index = 0 }) {
           <span aria-hidden="true">&rarr;</span>
         </Link>
       </div>
-    </motion.article>
+    </InteractiveCard>
   );
 }

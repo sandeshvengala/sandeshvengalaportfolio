@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { projects } from '../data/projects';
+import InteractiveCard from '../components/InteractiveCard';
 
 export default function ProjectDetails() {
   const { slug } = useParams();
@@ -18,13 +19,13 @@ export default function ProjectDetails() {
 
   return (
     <section className="mx-auto w-[min(1120px,92vw)] py-20 md:py-24">
-      <div className="rounded-3xl border border-ink/10 bg-white/80 p-7 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35 md:p-10">
+      <InteractiveCard className="rounded-3xl border border-ink/10 bg-white/80 p-7 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35 md:p-10">
         <p className="mb-4 inline-flex rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
           {project.category}
         </p>
         <h1 className="font-display text-5xl leading-[0.95] md:text-6xl">{project.title}</h1>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-ink/80 dark:text-paper/80">{project.description}</p>
-      </div>
+      </InteractiveCard>
 
       <img
         src={project.image}
@@ -59,21 +60,21 @@ export default function ProjectDetails() {
       )}
 
       <div className="mt-12 grid gap-8 md:grid-cols-3">
-        <article className="rounded-3xl border border-ink/10 bg-white/85 p-6 backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35">
+        <InteractiveCard className="rounded-3xl border border-ink/10 bg-white/85 p-6 backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35">
           <h2 className="mb-3 text-xl font-semibold">Challenge</h2>
           <p className="text-ink/75 dark:text-paper/80">{project.caseStudy.challenge}</p>
-        </article>
-        <article className="rounded-3xl border border-ink/10 bg-white/85 p-6 backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35">
+        </InteractiveCard>
+        <InteractiveCard className="rounded-3xl border border-ink/10 bg-white/85 p-6 backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35">
           <h2 className="mb-3 text-xl font-semibold">Solution</h2>
           <p className="text-ink/75 dark:text-paper/80">{project.caseStudy.solution}</p>
-        </article>
-        <article className="rounded-3xl border border-ink/10 bg-white/85 p-6 backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35">
+        </InteractiveCard>
+        <InteractiveCard className="rounded-3xl border border-ink/10 bg-white/85 p-6 backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35">
           <h2 className="mb-3 text-xl font-semibold">Impact</h2>
           <p className="text-ink/75 dark:text-paper/80">{project.caseStudy.impact}</p>
-        </article>
+        </InteractiveCard>
       </div>
 
-      <div className="mt-12 rounded-3xl border border-ink/10 bg-white/80 p-6 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/25">
+      <InteractiveCard className="mt-12 rounded-3xl border border-ink/10 bg-white/80 p-6 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/25">
         <p className="mb-3 text-sm uppercase tracking-[0.2em] text-accent">Tools used</p>
         <div className="flex flex-wrap gap-3">
           {project.tools.map((tool) => (
@@ -82,7 +83,7 @@ export default function ProjectDetails() {
             </span>
           ))}
         </div>
-      </div>
+      </InteractiveCard>
     </section>
   );
 }

@@ -6,8 +6,8 @@ const navItems = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Resume', to: '/resume' },
-  { label: 'Projects', to: '/projects' },
-  { label: 'Contact', to: '/contact' }
+  //{ label: 'Projects', to: '/projects' },
+  //{ label: 'Contact', to: '/contact' }
 ];
 
 export default function Navbar() {
@@ -51,7 +51,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/70 backdrop-blur-xl transition dark:border-paper/10 dark:bg-ink/70">
       <nav className="mx-auto flex w-[min(1120px,92vw)] items-center justify-between py-3.5">
         <Link to="/" className="font-display text-[1.85rem] leading-none tracking-tight">
-          Sandesh Vengala
+          {/* Sandesh Vengala */}
         </Link>
 
         <div className="hidden items-center gap-2 rounded-full border border-ink/10 bg-white/75 px-3 py-2 dark:border-paper/10 dark:bg-ink/40 md:flex">
