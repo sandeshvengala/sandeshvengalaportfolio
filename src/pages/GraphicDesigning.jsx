@@ -1,16 +1,16 @@
 import { useMemo, useState } from 'react';
 import SectionTitle from '../components/SectionTitle';
-import ProjectCard from '../components/ProjectCard';
 import InteractiveCard from '../components/InteractiveCard';
 import BackButton from '../components/BackButton';
-import { categories, projects } from '../data/projects';
+import InProgressCard from '../components/InProgressCard';
+import { categories, inProgressProjects } from '../data/projects';
 
 export default function GraphicDesigning() {
   const [activeCategory, setActiveCategory] = useState('All');
 
   const filteredProjects = useMemo(() => {
-    if (activeCategory === 'All') return projects;
-    return projects.filter((project) => project.category === activeCategory);
+    if (activeCategory === 'All') return inProgressProjects;
+    return inProgressProjects.filter((project) => project.category === activeCategory);
   }, [activeCategory]);
 
   return (
@@ -47,9 +47,9 @@ export default function GraphicDesigning() {
         ))}
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {filteredProjects.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
+          <InProgressCard key={project.id} project={project} index={index} />
         ))}
       </div>
     </section>

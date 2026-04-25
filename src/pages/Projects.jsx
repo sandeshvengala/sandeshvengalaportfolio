@@ -3,6 +3,8 @@ import SectionTitle from '../components/SectionTitle';
 import InteractiveCard from '../components/InteractiveCard';
 import BackButton from '../components/BackButton';
 
+
+
 export default function Projects() {
   return (
     <section className="relative mx-auto max-w-6xl overflow-hidden px-4 py-12">

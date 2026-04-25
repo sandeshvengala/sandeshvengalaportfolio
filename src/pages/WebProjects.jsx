@@ -1,16 +1,16 @@
 import { useMemo, useState } from 'react';
 import SectionTitle from '../components/SectionTitle';
-import ProjectCard from '../components/ProjectCard';
 import InteractiveCard from '../components/InteractiveCard';
 import BackButton from '../components/BackButton';
-import { webProjectCategories, webProjects } from '../data/webProjects';
+import InProgressCard from '../components/InProgressCard';
+import { webProjectCategories, inProgressWebProjects } from '../data/webProjects';
 
 export default function WebProjects() {
     const [activeCategory, setActiveCategory] = useState('All');
 
   const filteredProjects = useMemo(() => {
-    if (activeCategory === 'All') return webProjects;
-    return webProjects.filter((project) => project.category === activeCategory);
+    if (activeCategory === 'All') return inProgressWebProjects;
+    return inProgressWebProjects.filter((project) => project.category === activeCategory);
   }, [activeCategory]);
 
   return (
@@ -53,9 +53,9 @@ export default function WebProjects() {
         ))}
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {filteredProjects.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
+          <InProgressCard key={project.id} project={project} index={index} />
         ))}
       </div>
     </section>
