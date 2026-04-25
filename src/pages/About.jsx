@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import InteractiveCard from '../components/InteractiveCard';
+import BackButton from '../components/BackButton';
 
 const revealTransition = { duration: 0.55, ease: 'easeOut' };
 
@@ -98,7 +99,10 @@ function renderFocusIcon(item) {
 
 export default function About() {
   return (
-    <section className="mx-auto w-[min(1120px,92vw)] py-20 md:py-24">
+    <section className="relative mx-auto max-w-6xl overflow-hidden px-4 py-12">
+      <div className="mb-6 flex items-center justify-between">
+        <BackButton />
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}

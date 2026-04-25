@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import SectionTitle from '../components/SectionTitle';
 import InteractiveCard from '../components/InteractiveCard';
+import BackButton from '../components/BackButton';
 import { contactEmail, contactEndpoint, contactLocation, contactPhone, socialLinks } from '../data/siteContent';
 
 export default function Contact() {
@@ -62,6 +63,9 @@ export default function Contact() {
 
   return (
     <section className="mx-auto w-[min(1120px,92vw)] py-20 md:py-24">
+      <div className="mb-4 flex items-center justify-between">
+        <BackButton />
+      </div>
       <p className="mb-4 inline-flex rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
         Get In Touch
       </p>

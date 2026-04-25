@@ -3,14 +3,14 @@ import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
 import InteractiveCard from '../components/InteractiveCard';
 import BackButton from '../components/BackButton';
-import { categories, projects } from '../data/projects';
+import { webProjectCategories, webProjects } from '../data/webProjects';
 
-export default function GraphicDesigning() {
-  const [activeCategory, setActiveCategory] = useState('All');
+export default function WebProjects() {
+    const [activeCategory, setActiveCategory] = useState('All');
 
   const filteredProjects = useMemo(() => {
-    if (activeCategory === 'All') return projects;
-    return projects.filter((project) => project.category === activeCategory);
+    if (activeCategory === 'All') return webProjects;
+    return webProjects.filter((project) => project.category === activeCategory);
   }, [activeCategory]);
 
   return (
@@ -19,19 +19,25 @@ export default function GraphicDesigning() {
         <BackButton />
       </div>
       <p className="mb-4 inline-flex rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
-        Design Portfolio
+        Development Portfolio
       </p>
-      <SectionTitle title="Graphic Designing" subtitle="Design Portfolio" />
+      <SectionTitle title="Web Projects" subtitle="Full Stack Development" />
 
       <InteractiveCard className="mb-8 rounded-3xl border border-ink/10 bg-white/80 p-6 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/30">
         <p className="max-w-3xl text-lg leading-relaxed text-ink/80 dark:text-paper/80">
-          Creative design work across branding, social media, UI/UX, event posters, wedding invitations, birthday
-          creatives, and more.
+          Explore my full-stack web applications and e-commerce platforms built with modern technologies. Each project demonstrates responsive design, scalable architecture, and real-world functionality.
         </p>
       </InteractiveCard>
 
       <div className="mb-10 flex flex-wrap gap-2 rounded-2xl border border-ink/10 bg-white/70 p-3 dark:border-paper/10 dark:bg-ink/30">
-        {categories.map((category) => (
+        {/* 
+          Project Categories:
+          - All: Shows all web projects
+          - Full Stack: Complete MERN/MEAN stack applications
+          - E-Commerce: E-commerce and shopping platforms
+          - MERN Stack: MongoDB, Express, React, Node.js projects
+        */}
+        {webProjectCategories.map((category) => (
           <button
             key={category}
             onClick={() => setActiveCategory(category)}

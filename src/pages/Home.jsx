@@ -200,8 +200,8 @@ export default function Home() {
               <div className="absolute inset-0 rounded-full border border-accent/15" />
               <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-white/10 shadow-card">
                 <img
-                  src={heroImageUrl}
-                  alt="Sandesh"
+                  src="/assets/images/designer-profile.JPG"
+                  alt="Sandesh Vengala"
                   className="h-full w-full object-cover object-[center_18%]"
                 />
               </div>

@@ -43,6 +43,7 @@ const skillTags = [
 ];
 import { motion } from 'framer-motion';
 import InteractiveCard from '../components/InteractiveCard';
+import BackButton from '../components/BackButton';
 
 const revealTransition = { duration: 0.55, ease: 'easeOut' };
 
@@ -183,6 +184,9 @@ const achievements = [
 export default function Resume() {
   return (
     <section className="relative mx-auto max-w-6xl overflow-hidden px-4 py-12">
+      <div className="mb-6">
+        <BackButton />
+      </div>
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
         <div className="absolute -left-28 top-0 h-80 w-80 rounded-full bg-yellow-400/10 blur-3xl" />
         <div className="absolute -right-24 top-1/3 h-96 w-96 rounded-full bg-orange-500/10 blur-3xl" />
@@ -197,9 +201,9 @@ export default function Resume() {
           className="flex items-end gap-4"
         >
           <div>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-accent">My Journey</p>
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">Professional Journey</p>
             <h2 className="font-display text-4xl font-bold md:text-5xl">
-              My <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Resume</span>
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Resume</span>
             </h2>
           </div>
           <div className="mb-2 h-px flex-1 bg-gradient-to-r from-accent/35 to-transparent" />
@@ -211,19 +215,14 @@ export default function Resume() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={revealTransition}
-            className="rounded-2xl bg-card border border-border p-7 shadow-card backdrop-blur-sm lg:p-8"
+            className="rounded-2xl bg-white/85 border border-ink/10 p-7 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35 lg:p-8"
           >
             <div className="mb-7 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-r from-yellow-400 to-orange-500 text-ink shadow-lg shadow-yellow-500/20">
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path d="M22 10 12 5 2 10l10 5 10-5Z" />
-                  <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
-                </svg>
-              </div>
+              <div className="h-3 w-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500" />
               <h3 className="font-display text-3xl font-bold">
-                My <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Education</span>
+                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Education</span>
               </h3>
-              <div className="h-px flex-1 bg-gradient-to-r from-accent/25 to-transparent" />
+              <div className="h-px flex-1 bg-gradient-to-r from-accent/40 to-transparent" />
             </div>
 
             <div className="relative">
@@ -238,12 +237,12 @@ export default function Resume() {
                     transition={{ ...revealTransition, delay: index * 0.06 }}
                     className="group relative pl-8"
                   >
-                    <div className="absolute left-0 top-1.5 h-[15px] w-[15px] rounded-full border-[3px] border-accent bg-white transition-all duration-300 group-hover:scale-110 group-hover:bg-accent dark:bg-ink" />
-                    <div className="rounded-xl border border-border/50 bg-secondary/30 p-4 transition-all duration-300 hover:border-primary/30 hover:bg-secondary/50">
+                    <div className="absolute left-0 top-1.5 h-[15px] w-[15px] rounded-full border border-accent bg-white transition-all duration-300 group-hover:scale-110 group-hover:bg-accent dark:bg-ink" />
+                    <div className="rounded-xl border border-ink/15 bg-white/75 p-4 transition-all duration-300 hover:border-accent/30 hover:bg-white/85 dark:border-paper/15 dark:bg-ink/30 dark:hover:border-accent/40 dark:hover:bg-ink/40">
                       <span className="mb-2 inline-block rounded-full bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent">
                         {item.period}
                       </span>
-                      <h4 className="font-display text-xl font-bold">{item.title}</h4>
+                      <h4 className="font-display text-xl font-bold text-ink dark:text-paper">{item.title}</h4>
                       {item.detail.includes('CGPA:') ? (
                         <>
                           <p className="mt-1 text-sm text-ink/75 dark:text-paper/75">
@@ -268,19 +267,14 @@ export default function Resume() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ ...revealTransition, delay: 0.06 }}
-            className="rounded-2xl bg-card border border-border p-7 shadow-card backdrop-blur-sm lg:p-8"
+            className="rounded-2xl bg-white/85 border border-ink/10 p-7 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35 lg:p-8"
           >
             <div className="mb-7 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-r from-yellow-400 to-orange-500 text-ink shadow-lg shadow-yellow-500/20">
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <rect x="2" y="7" width="20" height="14" rx="2" />
-                  <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
-                </svg>
-              </div>
+              <div className="h-3 w-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500" />
               <h3 className="font-display text-3xl font-bold">
-                Work <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Experience</span>
+                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Experience</span>
               </h3>
-              <div className="h-px flex-1 bg-gradient-to-r from-accent/25 to-transparent" />
+              <div className="h-px flex-1 bg-gradient-to-r from-accent/40 to-transparent" />
             </div>
 
             <div className="relative">
@@ -295,12 +289,12 @@ export default function Resume() {
                     transition={{ ...revealTransition, delay: index * 0.06 }}
                     className="group relative pl-8"
                   >
-                    <div className="absolute left-0 top-1.5 h-[15px] w-[15px] rounded-full border-[3px] border-accent bg-white transition-all duration-300 group-hover:scale-110 group-hover:bg-accent dark:bg-ink" />
-                    <div className="rounded-xl border border-border/50 bg-secondary/30 p-4 transition-all duration-300 hover:border-primary/30 hover:bg-secondary/50">
+                    <div className="absolute left-0 top-1.5 h-[15px] w-[15px] rounded-full border border-accent bg-white transition-all duration-300 group-hover:scale-110 group-hover:bg-accent dark:bg-ink" />
+                    <div className="rounded-xl border border-ink/15 bg-white/75 p-4 transition-all duration-300 hover:border-accent/30 hover:bg-white/85 dark:border-paper/15 dark:bg-ink/30 dark:hover:border-accent/40 dark:hover:bg-ink/40">
                       <span className="mb-2 inline-block rounded-full bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent">
                         {item.period}
                       </span>
-                      <h4 className="font-display text-xl font-bold">{item.role}</h4>
+                      <h4 className="font-display text-xl font-bold text-ink dark:text-paper">{item.role}</h4>
                       <p className="mt-1 text-sm text-ink/75 dark:text-paper/75">{item.detail}</p>
                       <ul className="mt-3 space-y-2">
                         {item.highlights.slice(0, 2).map((point, pointIndex) => (
@@ -330,9 +324,15 @@ export default function Resume() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ ...revealTransition, delay: 0.08 }}
-          className="rounded-2xl bg-card border border-border p-7 shadow-card backdrop-blur-sm lg:p-8"
+          className="rounded-2xl bg-white/85 border border-ink/10 p-7 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35 lg:p-8"
         >
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-accent">Skills & Technologies</p>
+          <div className="mb-8 flex items-center gap-4">
+            <div className="h-3 w-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500" />
+            <h3 className="font-display text-3xl font-bold">
+              Skills <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">&amp; Technologies</span>
+            </h3>
+            <div className="h-px flex-1 bg-gradient-to-r from-accent/40 to-transparent" />
+          </div>
 
           <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-2">
             {/* Progress Bars */}
@@ -346,10 +346,10 @@ export default function Resume() {
                   transition={{ ...revealTransition, delay: index * 0.05 }}
                 >
                   <div className="mb-1.5 flex items-center justify-between text-sm">
-                    <span className="font-semibold text-foreground/90">{item.label}</span>
+                    <span className="font-semibold text-ink/80 dark:text-paper/80">{item.label}</span>
                     <span className="font-semibold text-orange-400">{item.value}%</span>
                   </div>
-                  <div className="h-2.5 overflow-hidden rounded-full bg-foreground/10">
+                  <div className="h-2.5 overflow-hidden rounded-full bg-ink/10 dark:bg-paper/10">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${item.value}%` }}
@@ -370,7 +370,7 @@ export default function Resume() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ ...revealTransition, delay: valueIndex * 0.02 }}
-                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-transparent px-3 py-1.5 text-xs font-semibold text-foreground/90 dark:text-paper/90"
+                    className="inline-flex items-center gap-2 rounded-xl border border-ink/15 bg-white/75 px-3 py-1.5 text-xs font-semibold text-ink/80 dark:border-paper/15 dark:bg-ink/30 dark:text-paper/80"
                 >
                   {renderSkillIcon(value)}
                   {value}
@@ -379,14 +379,14 @@ export default function Resume() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-8 border-t border-border/50 pt-8 sm:grid-cols-2">
+          <div className="mt-10 grid gap-8 border-t border-ink/10 pt-8 dark:border-paper/10 sm:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={revealTransition}
             >
-              <h4 className="mb-4 flex items-center gap-2 text-lg font-heading font-bold text-foreground">
+              <h4 className="mb-4 flex items-center gap-2 text-lg font-heading font-bold text-ink dark:text-paper">
                 <svg className="h-5 w-5 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                 </svg>
@@ -400,7 +400,7 @@ export default function Resume() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ ...revealTransition, delay: valueIndex * 0.02 }}
-                    className="rounded-full border border-border bg-transparent px-4 py-2 text-sm font-semibold text-foreground/90"
+                    className="rounded-full border border-ink/15 bg-white/75 px-4 py-2 text-sm font-semibold text-ink/80 dark:border-paper/15 dark:bg-ink/30 dark:text-paper/80"
                   >
                     {value}
                   </motion.span>
@@ -414,8 +414,8 @@ export default function Resume() {
               viewport={{ once: true }}
               transition={{ ...revealTransition, delay: 0.04 }}
             >
-              <h4 className="mb-4 flex items-center gap-2 text-lg font-heading font-bold text-foreground">
-                <svg className="lucide lucide-globe w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <h4 className="mb-4 flex items-center gap-2 text-lg font-heading font-bold text-ink dark:text-paper">
+                <svg className="lucide lucide-globe w-5 h-5 text-orange-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="10" />
                   <path d="M2 12h20" />
                   <path d="M12 2a15.3 15.3 0 0 1 0 20a15.3 15.3 0 0 1 0-20" />
@@ -434,10 +434,10 @@ export default function Resume() {
                   >
                     <span className="flex items-center w-8">
                       {renderLanguageLogo(language.code)}
-                      <span className="text-sm font-bold text-foreground/85">{language.code}</span>
+                      <span className="text-sm font-bold text-ink/75 dark:text-paper/75">{language.code}</span>
                     </span>
-                    <span className="w-16 text-sm font-heading font-semibold text-foreground">{language.label}</span>
-                    <div className="h-2.5 min-w-[120px] flex-1 overflow-hidden rounded-full bg-foreground/10">
+                    <span className="w-16 text-sm font-heading font-semibold text-ink dark:text-paper">{language.label}</span>
+                    <div className="h-2.5 min-w-[120px] flex-1 overflow-hidden rounded-full bg-ink/10 dark:bg-paper/10">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: `${language.value}%` }}
@@ -458,9 +458,15 @@ export default function Resume() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ ...revealTransition, delay: 0.1 }}
-          className="rounded-2xl bg-card border border-border p-7 shadow-card backdrop-blur-sm lg:p-8"
+          className="rounded-2xl bg-white/85 border border-ink/10 p-7 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35 lg:p-8"
         >
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-accent">Achievements</p>
+          <div className="mb-6 flex items-center gap-4">
+            <div className="h-3 w-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500" />
+            <h3 className="font-display text-3xl font-bold">
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Achievements</span>
+            </h3>
+            <div className="h-px flex-1 bg-gradient-to-r from-accent/40 to-transparent" />
+          </div>
           <ul className="space-y-2.5">
             {achievements.map((item, index) => (
               <motion.li

@@ -6,6 +6,7 @@ import About from './pages/About';
 import Resume from './pages/Resume';
 import Projects from './pages/Projects';
 import GraphicDesigning from './pages/GraphicDesigning';
+import WebProjects from './pages/WebProjects';
 import ProjectDetails from './pages/ProjectDetails';
 import Photography from './pages/Photography';
 import Contact from './pages/Contact';
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/graphic-designing" element={<GraphicDesigning />} />
+          <Route path="/projects/web-projects" element={<WebProjects />} />
           <Route path="/projects/:slug" element={<ProjectDetails />} />
           <Route path="/photography" element={<Photography />} />
           <Route path="/contact" element={<Contact />} />
