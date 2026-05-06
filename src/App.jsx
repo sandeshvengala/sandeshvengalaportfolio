@@ -10,6 +10,7 @@ import WebProjects from './pages/WebProjects';
 import ProjectDetails from './pages/ProjectDetails';
 import Photography from './pages/Photography';
 import Contact from './pages/Contact';
+import AdminInbox from './pages/AdminInbox';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,6 +38,7 @@ export default function App() {
           <Route path="/projects/:slug" element={<ProjectDetails />} />
           <Route path="/photography" element={<Photography />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin-inbox" element={<AdminInbox />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

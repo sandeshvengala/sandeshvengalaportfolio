@@ -24,8 +24,7 @@ export default function Contact() {
     if (!contactEndpoint) {
       setSubmitState({
         status: 'error',
-        message:
-          'Submission endpoint is not configured. Add VITE_CONTACT_ENDPOINT in .env and restart the dev server.'
+        message: 'No submission endpoint configured. Set VITE_CONTACT_ENDPOINT to your private backend or Supabase Edge Function URL.'
       });
       return;
     }
@@ -47,22 +46,17 @@ export default function Contact() {
         })
       });
 
-      if (!response.ok) {
-        throw new Error('Request failed');
-      }
+      if (!response.ok) throw new Error('Request failed');
 
       setSubmitState({ status: 'success', message: 'Message sent. I will get back to you soon.' });
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      setSubmitState({
-        status: 'error',
-        message: 'Something went wrong while sending. Please try again in a moment.'
-      });
+      setSubmitState({ status: 'error', message: 'Failed to send message. Please try again in a moment.' });
     }
   };
 
   return (
-    <section className="mx-auto w-[min(1120px,92vw)] py-20 md:py-24">
+    <section className="relative mx-auto max-w-6xl px-4 py-20 md:py-24">
       <div className="mb-4 flex items-center justify-between">
         <BackButton />
       </div>
@@ -71,7 +65,7 @@ export default function Contact() {
       </p>
       <SectionTitle title="Contact" subtitle="Start a Project" />
 
-      <div className="grid gap-10 md:grid-cols-[1fr_1.1fr]">
+      <div className="grid gap-10 md:grid-cols-2 items-start">
         <InteractiveCard
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,28 +73,53 @@ export default function Contact() {
           className="space-y-5 rounded-3xl border border-ink/10 bg-white/80 p-6 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35"
         >
           <p className="text-lg leading-relaxed text-ink/80 dark:text-paper/80">
-            Let us work together to create something amazing. Feel free to reach out for collaborations, freelance
-            work, or project discussions.
+            Let us work together to create something amazing. Reach out for collaborations, freelance work, or project
+            discussions.
           </p>
-          <p className="rounded-xl border border-ink/10 bg-white/75 px-4 py-3 font-semibold dark:border-paper/10 dark:bg-ink/25">
-            Email: {contactEmail}
-          </p>
-          <p className="rounded-xl border border-ink/10 bg-white/75 px-4 py-3 font-semibold dark:border-paper/10 dark:bg-ink/25">
-            Phone: {contactPhone}
-          </p>
-          <p className="rounded-xl border border-ink/10 bg-white/75 px-4 py-3 font-semibold dark:border-paper/10 dark:bg-ink/25">
-            Location: {contactLocation}
-          </p>
-          <div className="flex flex-wrap gap-3 text-sm font-semibold uppercase tracking-[0.15em]">
+
+          <div className="grid gap-3">
+            <a
+              href={`mailto:${contactEmail}`}
+              className="flex items-center gap-3 rounded-xl border border-ink/10 bg-white/75 px-4 py-3 text-sm transition hover:border-accent dark:border-paper/10 dark:bg-ink/25"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span className="text-xs uppercase tracking-[0.12em] text-ink/70 dark:text-paper/70">Email</span>
+              <span className="ml-auto font-semibold text-ink/90 dark:text-paper/90">{contactEmail}</span>
+            </a>
+
+            <a
+              href={`tel:${contactPhone.replace(/\s+/g, '')}`}
+              className="flex items-center gap-3 rounded-xl border border-ink/10 bg-white/75 px-4 py-3 text-sm transition hover:border-accent dark:border-paper/10 dark:bg-ink/25"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h2.2a2 2 0 011.98 1.6l.36 2a2 2 0 01-.45 1.7L7.1 9.9a11 11 0 005 5l1-1.2a2 2 0 011.7-.45l2 .36A2 2 0 0121 16.8V19a2 2 0 01-2 2H19a16 16 0 01-16-16V5z" />
+              </svg>
+              <span className="text-xs uppercase tracking-[0.12em] text-ink/70 dark:text-paper/70">Phone</span>
+              <span className="ml-auto font-semibold text-ink/90 dark:text-paper/90">{contactPhone}</span>
+            </a>
+
+            <div className="flex items-center gap-3 rounded-xl border border-ink/10 bg-white/75 px-4 py-3 text-sm dark:border-paper/10 dark:bg-ink/25">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 21s9-5.5 9-11a9 9 0 10-18 0c0 5.5 9 11 9 11z" />
+              </svg>
+              <span className="text-xs uppercase tracking-[0.12em] text-ink/70 dark:text-paper/70">Location</span>
+              <span className="ml-auto font-semibold text-ink/90 dark:text-paper/90">{contactLocation}</span>
+            </div>
+          </div>
+
+          <div className="mt-3 flex gap-3">
             {socialLinks.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="rounded-full border border-ink/15 px-4 py-2 transition hover:border-accent hover:text-accent dark:border-paper/20"
                 target="_blank"
                 rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] transition hover:border-accent hover:text-accent dark:border-paper/20"
               >
-                {item.label}
+                <span className="font-medium">{item.label}</span>
               </a>
             ))}
           </div>

@@ -147,9 +147,7 @@ export default function About() {
             ⚡
           </div>
           <p className="text-lg leading-relaxed text-ink/80 dark:text-paper/80">
-            I am a passionate and versatile developer and designer focused on building modern, user-centric digital
-            experiences. With a strong foundation in web development and UI/UX design, I specialize in responsive,
-            interactive, and visually appealing applications.
+            I am a passionate and versatile frontend developer with a growing interest in backend development, focused on building modern, user-centric digital experiences. With a strong foundation in web development, I specialize in creating responsive, interactive, and visually appealing applications while continuously expanding my backend skills.
           </p>
         </InteractiveCard>
 
@@ -164,9 +162,7 @@ export default function About() {
             ✦
           </div>
           <p className="text-lg leading-relaxed text-ink/80 dark:text-paper/80">
-            I am currently developing The Student Spot, a platform aimed at empowering students through resources,
-            community engagement, and innovation. Alongside development, I work on graphic design and photography to
-            bring a strong visual perspective into every product.
+            I successfully developed The Student Spot, a platform aimed at empowering students through resources, community engagement, and innovation. Additionally, I built SnackVilla, an e-commerce platform for snacks, designed with a modern, responsive, and user-friendly interface to deliver a seamless shopping experience.
           </p>
         </InteractiveCard>
       </div>

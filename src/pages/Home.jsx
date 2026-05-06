@@ -69,7 +69,7 @@ export default function Home() {
             transition={{ duration: 0.65 }}
           >
             <p className="mb-5 inline-flex rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
-              Available For Opportunities
+              Open to Work
             </p>
 
             <h1 className="font-display text-4xl leading-[0.95] md:text-7xl">
