@@ -56,7 +56,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative mx-auto max-w-6xl px-4 py-20 md:py-24">
+    <section className="relative mx-auto max-w-6xl px-4 py-8 md:py-12">
       <div className="mb-4 flex items-center justify-between">
         <BackButton />
       </div>
