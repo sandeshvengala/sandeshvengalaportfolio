@@ -14,7 +14,7 @@ export default function Projects() {
       <p className="mb-4 inline-flex rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
         Creative Sections
       </p>
-      <SectionTitle title="Projects" subtitle="Portfolio Sections" />
+      <SectionTitle title="Works" subtitle="Portfolio Sections" />
 
       <div className="mb-8 rounded-3xl border border-ink/10 bg-white/80 p-6 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/30">
         <p className="max-w-3xl text-lg leading-relaxed text-ink/80 dark:text-paper/80">

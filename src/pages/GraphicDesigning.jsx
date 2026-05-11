@@ -3,18 +3,14 @@ import SectionTitle from '../components/SectionTitle';
 import InteractiveCard from '../components/InteractiveCard';
 import BackButton from '../components/BackButton';
 import InProgressCard from '../components/InProgressCard';
-import { categories, inProgressProjects } from '../data/projects';
+import { inProgressProjects } from '../data/projects';
 
 export default function GraphicDesigning() {
-  const [activeCategory, setActiveCategory] = useState('All');
-
-  const filteredProjects = useMemo(() => {
-    if (activeCategory === 'All') return inProgressProjects;
-    return inProgressProjects.filter((project) => project.category === activeCategory);
-  }, [activeCategory]);
+  // No filtering, show all
+  const filteredProjects = inProgressProjects;
 
   return (
-    <section className="mx-auto w-[min(1120px,92vw)] py-20 md:py-24">
+    <section className="mx-auto w-[min(1120px,92vw)] py-8 md:py-10">
       <div className="mb-4 flex items-center justify-between">
         <BackButton />
       </div>
@@ -30,22 +26,7 @@ export default function GraphicDesigning() {
         </p>
       </InteractiveCard>
 
-      <div className="mb-10 flex flex-wrap gap-2 rounded-2xl border border-ink/10 bg-white/70 p-3 dark:border-paper/10 dark:bg-ink/30">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setActiveCategory(category)}
-            type="button"
-            className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition ${
-              activeCategory === category
-                ? 'bg-accent text-white'
-                : 'border border-ink/20 bg-white/75 hover:border-accent hover:text-accent dark:border-paper/20 dark:bg-ink/35'
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {filteredProjects.map((project, index) => (

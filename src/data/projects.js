@@ -4,24 +4,6 @@ export const projects = [];
 
 export const inProgressProjects = [
   {
-    id: 1,
-    title: 'Cafe Branding Design',
-    description: 'Modern and minimal brand identity for a youth-focused cafe brand.',
-    category: 'Branding',
-    progress: 75,
-    technologies: ['Illustrator', 'Photoshop'],
-    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/a740d5222073551.Y3JvcCwyODYyLDIyMzksNTAzLDM2OA.jpg'
-  },
-  {
-    id: 2,
-    title: 'Instagram Campaign - The Student Spot',
-    description: 'Creative Instagram posts focused on engagement and visual consistency.',
-    category: 'Social Media Design',
-    progress: 68,
-    technologies: ['Canva', 'Photoshop'],
-    image: 'https://i.pinimg.com/736x/49/59/f9/4959f979e184de0e9da77aba49cb7eb3.jpg'
-  },
-  {
     id: 3,
     title: 'Event Poster Design',
     description: 'Bold and attractive poster design built for quick attention and clarity.',
@@ -29,15 +11,6 @@ export const inProgressProjects = [
     progress: 72,
     technologies: ['Photoshop'],
     image: 'https://cdn.dribbble.com/userupload/9019597/file/original-4889fc6d0cb39d2af648e4d9e52b5fca.jpg?resize=400x0'
-  },
-  {
-    id: 4,
-    title: 'Mobile App UI Design',
-    description: 'Clean and user-friendly mobile app interface focused on usability.',
-    category: 'UI/UX Design',
-    progress: 70,
-    technologies: ['Figma'],
-    image: 'https://cdn.dribbble.com/userupload/43005095/file/original-9839333c010bb5a7b674b35f5a53fd62.png?resize=752x&vertical=center'
   },
   {
     id: 5,

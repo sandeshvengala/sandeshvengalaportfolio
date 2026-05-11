@@ -3,18 +3,15 @@ import SectionTitle from '../components/SectionTitle';
 import InteractiveCard from '../components/InteractiveCard';
 import BackButton from '../components/BackButton';
 import InProgressCard from '../components/InProgressCard';
-import { webProjectCategories, inProgressWebProjects } from '../data/webProjects';
+import { inProgressWebProjects, webProjects } from '../data/webProjects';
 
 export default function WebProjects() {
-    const [activeCategory, setActiveCategory] = useState('All');
-
-  const filteredProjects = useMemo(() => {
-    if (activeCategory === 'All') return inProgressWebProjects;
-    return inProgressWebProjects.filter((project) => project.category === activeCategory);
-  }, [activeCategory]);
+  // No filtering, show all
+  const filteredInProgress = inProgressWebProjects;
+  const filteredCompleted = webProjects;
 
   return (
-    <section className="mx-auto w-[min(1120px,92vw)] py-20 md:py-24">
+    <section className="mx-auto w-[min(1120px,92vw)] py-8 md:py-10">
       <div className="mb-4 flex items-center justify-between">
         <BackButton />
       </div>
@@ -29,32 +26,54 @@ export default function WebProjects() {
         </p>
       </InteractiveCard>
 
-      <div className="mb-10 flex flex-wrap gap-2 rounded-2xl border border-ink/10 bg-white/70 p-3 dark:border-paper/10 dark:bg-ink/30">
-        {/* 
-          Project Categories:
-          - All: Shows all web projects
-          - Full Stack: Complete MERN/MEAN stack applications
-          - E-Commerce: E-commerce and shopping platforms
-          - MERN Stack: MongoDB, Express, React, Node.js projects
-        */}
-        {webProjectCategories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setActiveCategory(category)}
-            type="button"
-            className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition ${
-              activeCategory === category
-                ? 'bg-accent text-white'
-                : 'border border-ink/20 bg-white/75 hover:border-accent hover:text-accent dark:border-paper/20 dark:bg-ink/35'
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {filteredProjects.map((project, index) => (
+        {/* Completed Projects */}
+        {filteredCompleted.map((project, index) => (
+          <InteractiveCard key={project.id} className="relative rounded-3xl border border-ink/10 bg-white/85 p-7 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35">
+            {/* Completed Badge */}
+            <span className="absolute top-4 right-4 inline-flex items-center gap-1 rounded-full bg-green-600/90 px-3 py-1 text-xs font-bold text-white shadow">✔ Completed</span>
+            <p className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-accent/15 text-xs font-bold text-accent">{index + 1}</p>
+            <h3 className="mb-2 text-2xl font-semibold">{project.title}</h3>
+            <p className="mb-4 text-sm text-ink/75 dark:text-paper/80">{project.description}</p>
+            <div className="mb-4 flex flex-wrap gap-2">
+              {project.technologies && project.technologies.map((tech) => (
+                <span key={tech} className="rounded bg-accent/10 px-2 py-1 text-xs text-accent font-semibold">{tech}</span>
+              ))}
+            </div>
+            {project.image && (
+              <img
+                src={project.image}
+                alt={project.title}
+                className="mb-4 w-full rounded-lg border border-accent/10 bg-white"
+                style={{ height: 180, objectFit: 'contain', background: 'white' }}
+              />
+            )}
+            {(project.link || project.note) && (
+              <div className="mt-3 flex flex-col items-start gap-2">
+                {project.note && (
+                  <div className="inline-flex items-center gap-2 rounded bg-blue-50 px-3 py-1 text-xs text-blue-700 font-medium">
+                    <svg className="h-4 w-4 text-blue-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16.862 3.487A9.001 9.001 0 013 12c0 4.991 4.029 9.02 9.02 9.02 2.387 0 4.57-.93 6.25-2.45M15 9h6m0 0v6m0-6l-9 9-4-4-6 6" /></svg>
+                    <span>{project.note}</span>
+                  </div>
+                )}
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block rounded-full bg-blue-600 px-4 py-2 text-xs font-semibold text-white hover:bg-blue-700 transition shadow"
+                  >
+                    Visit Website
+                  </a>
+                )}
+              </div>
+            )}
+          </InteractiveCard>
+        ))}
+        {/* In Progress Projects */}
+        {filteredInProgress.map((project, index) => (
           <InProgressCard key={project.id} project={project} index={index} />
         ))}
       </div>

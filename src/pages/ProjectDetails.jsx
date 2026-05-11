@@ -10,7 +10,7 @@ export default function ProjectDetails() {
 
   if (!project) {
     return (
-      <section className="mx-auto w-[min(1120px,92vw)] py-24">
+      <section className="mx-auto w-[min(1120px,92vw)] py-10">
         <div className="mb-6">
           <BackButton />
         </div>
@@ -23,7 +23,7 @@ export default function ProjectDetails() {
   }
 
   return (
-    <section className="mx-auto w-[min(1120px,92vw)] py-20 md:py-24">
+    <section className="mx-auto w-[min(1120px,92vw)] py-8 md:py-10">
       <div className="mb-6">
         <BackButton />
       </div>
