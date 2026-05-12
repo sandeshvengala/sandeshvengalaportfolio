@@ -1,58 +1,15 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import SectionTitle from '../components/SectionTitle';
 import InteractiveCard from '../components/InteractiveCard';
 import BackButton from '../components/BackButton';
-import { contactEmail, contactEndpoint, contactLocation, contactPhone, socialLinks } from '../data/siteContent';
+import { contactEmail, contactLocation, contactPhone, socialLinks } from '../data/siteContent';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [submitState, setSubmitState] = useState({ status: 'idle', message: '' });
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    if (!contactEndpoint) {
-      setSubmitState({
-        status: 'error',
-        message: 'No submission endpoint configured. Set VITE_CONTACT_ENDPOINT to your private backend or Supabase Edge Function URL.'
-      });
-      return;
-    }
-
-    setSubmitState({ status: 'loading', message: 'Sending your message...' });
-
-    try {
-      const response = await fetch(contactEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          source: 'portfolio-contact-form'
-        })
-      });
-
-      if (!response.ok) throw new Error('Request failed');
-
-      setSubmitState({ status: 'success', message: 'Message sent. I will get back to you soon.' });
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      setSubmitState({ status: 'error', message: 'Failed to send message. Please try again in a moment.' });
-    }
+  const socialButtonClasses = {
+    LinkedIn:
+      'bg-[#0A66C2] text-white shadow-[0_12px_24px_rgba(10,102,194,0.24)] hover:bg-[#0958a8]',
+    Instagram:
+      'bg-[linear-gradient(135deg,#f58529_0%,#dd2a7b_50%,#8134af_100%)] text-white shadow-[0_12px_24px_rgba(221,42,123,0.24)] hover:opacity-95'
   };
 
   return (
@@ -63,20 +20,51 @@ export default function Contact() {
       <p className="mb-4 inline-flex rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
         Get In Touch
       </p>
-      <SectionTitle title="Contact" subtitle="Start a Project" />
+      {/* <SectionTitle title="Contact" subtitle="Start a Project" /> */}
 
-      <div className="grid gap-10 md:grid-cols-2 items-start">
+      <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] items-start">
         <InteractiveCard
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="space-y-5 rounded-3xl border border-ink/10 bg-white/80 p-6 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35"
+          className="space-y-6 rounded-3xl border border-ink/10 bg-white/80 p-6 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35"
         >
-          <p className="text-lg leading-relaxed text-ink/80 dark:text-paper/80">
-            Let us work together to create something amazing. Reach out for collaborations, freelance work, or project
-            discussions.
-          </p>
+          <div className="space-y-3">
+            <h3 className="text-2xl font-display font-bold tracking-tight">Let us build something memorable.</h3>
+            <p className="text-base leading-relaxed text-ink/80 dark:text-paper/80">
+              Reach out for collaborations, freelance work, or product ideas that need design and development support.
+            </p>
+          </div>
 
+          <div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink/60 dark:text-paper/65">
+              Connect On
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {socialLinks.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] transition hover:-translate-y-0.5 ${socialButtonClasses[item.label] || 'border border-ink/15 bg-white/80 text-ink dark:border-paper/20 dark:bg-ink/35 dark:text-paper'}`}
+                >
+                  <span className="font-medium">{item.label}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </InteractiveCard>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="space-y-3 rounded-3xl border border-ink/10 bg-white/80 p-5 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35"
+        >
+          <p className="px-1 text-xs font-semibold uppercase tracking-[0.16em] text-ink/60 dark:text-paper/65">
+            Contact Details
+          </p>
           <div className="grid gap-3">
             <a
               href={`mailto:${contactEmail}`}
@@ -109,97 +97,7 @@ export default function Contact() {
               <span className="ml-auto font-semibold text-ink/90 dark:text-paper/90">{contactLocation}</span>
             </div>
           </div>
-
-          <div className="mt-3 flex gap-3">
-            {socialLinks.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] transition hover:border-accent hover:text-accent dark:border-paper/20"
-              >
-                <span className="font-medium">{item.label}</span>
-              </a>
-            ))}
-          </div>
-        </InteractiveCard>
-
-        <motion.form
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-3xl border border-ink/10 bg-white/85 p-6 shadow-card backdrop-blur-sm dark:border-paper/10 dark:bg-ink/35"
-          onSubmit={handleSubmit}
-        >
-          <div className="mb-4">
-            <label htmlFor="name" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em]">
-              Name
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              className="w-full rounded-xl border border-ink/20 bg-white/70 px-4 py-3 outline-none transition focus:border-accent dark:border-paper/20 dark:bg-ink/30"
-              placeholder="Your full name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="email" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em]">
-              Email
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              className="w-full rounded-xl border border-ink/20 bg-white/70 px-4 py-3 outline-none transition focus:border-accent dark:border-paper/20 dark:bg-ink/30"
-              placeholder="you@company.com"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="mb-6">
-            <label htmlFor="message" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em]">
-              Project Brief
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              className="w-full rounded-xl border border-ink/20 bg-white/70 px-4 py-3 outline-none transition focus:border-accent dark:border-paper/20 dark:bg-ink/30"
-              placeholder="Tell me about your project goals"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="rounded-full bg-accent px-7 py-3 text-sm font-semibold uppercase tracking-widest text-white transition hover:-translate-y-1"
-            disabled={submitState.status === 'loading'}
-          >
-            {submitState.status === 'loading' ? 'Sending...' : 'Send Message'}
-          </button>
-
-          {submitState.message && (
-            <p
-              className={`mt-4 text-sm ${
-                submitState.status === 'error'
-                  ? 'text-red-600 dark:text-red-400'
-                  : 'text-emerald-700 dark:text-emerald-400'
-              }`}
-            >
-              {submitState.message}
-            </p>
-          )}
-        </motion.form>
+        </motion.div>
       </div>
     </section>
   );
