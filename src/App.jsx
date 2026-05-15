@@ -27,7 +27,7 @@ export default function App() {
     <div className="min-h-screen bg-paper text-ink transition-colors duration-300 dark:bg-ink dark:text-paper">
       <ScrollToTop />
       <Navbar />
-      <main>
+      <main className="pt-16">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

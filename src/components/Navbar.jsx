@@ -48,7 +48,7 @@ export default function Navbar() {
   const closeMobileMenu = () => setMobileOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/70 backdrop-blur-xl transition dark:border-paper/10 dark:bg-ink/70">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-ink/10 bg-paper/70 backdrop-blur-xl transition dark:border-paper/10 dark:bg-ink/70">
       <nav className="mx-auto flex w-[min(1120px,92vw)] items-center justify-between py-3.5">
         <Link to="/" className="font-display text-[1.85rem] leading-none tracking-tight">
           {/* Sandesh Vengala */}
