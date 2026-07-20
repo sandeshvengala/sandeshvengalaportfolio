@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { heroImageUrl, socialLinks } from '../data/siteContent';
+import HeroAvatar from "../components/HeroAvatar";
 
 const highlightStats = [
   { value: '200+', label: 'Graphic Designs' },
@@ -29,6 +30,7 @@ export default function Home() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [typedText, setTypedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [showLogo, setShowLogo] = useState(false);
 
   const rotatingIdentity = [
   "Vengala",
@@ -308,13 +310,20 @@ useEffect(() => {
               <div className="absolute inset-0 rounded-full bg-accent/10 blur-3xl scale-110" />
               <div className="absolute inset-3 rounded-full border border-accent/20" />
               <div className="absolute inset-0 rounded-full border border-accent/15" />
-              <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-white/10 shadow-card">
-                <img
-                  src="/assets/images/designer-profile.jpg"
-                  alt="Sandesh Vengala"
-                  className="h-full w-full object-cover object-[center_18%]"
-                />
-              </div>
+              <div
+  className="group relative h-full w-full overflow-hidden rounded-full border-4 border-white/10 shadow-card cursor-pointer"
+  onMouseEnter={() => setShowLogo(true)}
+  onMouseLeave={() => setShowLogo(false)}
+>
+
+  <div className="relative aspect-square w-full max-w-[420px]">
+  <HeroAvatar
+    profile="/assets/images/designer-profile.jpg"
+    logo="/assets/logos/sandeshvisuals.png"
+  />
+</div>
+
+</div>
             </div>
           </motion.div>
         </div>

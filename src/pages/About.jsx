@@ -164,6 +164,7 @@ export default function About() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
+
   <InteractiveCard
     initial={{ opacity: 0, y: 24 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -172,15 +173,21 @@ export default function About() {
     className="rounded-2xl border border-ink/10 bg-white/80 p-7 shadow-card dark:border-paper/10 dark:bg-ink/35"
   >
     <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
-      🎥
+      👋
     </div>
 
+    <h3 className="mb-4 font-display text-2xl font-bold">
+      Who I Am
+    </h3>
+
     <p className="text-lg leading-relaxed text-ink/80 dark:text-paper/80">
-      I am a passionate visual creator specializing in graphic design,
-      photography, videography, video editing, and content creation.
-      Through Sandesh Visuals, I transform ideas into compelling visual
-      stories that capture attention, build brand identity, and create
-      meaningful connections with audiences across digital platforms.
+      I'm <strong>Sandesh Vengala</strong>, the founder of
+      <strong> Sandesh Visuals</strong> and a creative professional
+      passionate about transforming ideas into meaningful visual
+      experiences. Through photography, videography, graphic design,
+      video editing, and digital content creation, I help brands,
+      businesses, and creators communicate their stories with clarity,
+      creativity, and impact.
     </p>
   </InteractiveCard>
 
@@ -195,86 +202,24 @@ export default function About() {
       🚀
     </div>
 
-    <p className="text-lg leading-relaxed text-ink/80 dark:text-paper/80">
-      From social media campaigns and cinematic videos to branding,
-      commercial shoots, product photography, and promotional content,
-      every project is crafted with creativity, strategy, and attention
-      to detail. My goal is simple—to help businesses, creators, and
-      personal brands stand out with visuals that leave a lasting impact.
-    </p>
-  </InteractiveCard>
-</div>
-
-<motion.div
-  initial={{ opacity: 0, y: 24 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ ...revealTransition, delay: 0.08 }}
-  className="mt-10"
->
-  <div className="mb-6 flex items-center gap-4">
-    <div className="h-3 w-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500" />
-
-    <h3 className="font-display text-3xl font-bold md:text-4xl">
-      What I
-      <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-        {" "}Create
-      </span>
+    <h3 className="mb-4 font-display text-2xl font-bold">
+      Beyond Creativity
     </h3>
 
-    <div className="h-px flex-1 bg-gradient-to-r from-accent/40 to-transparent" />
-  </div>
+    <p className="text-lg leading-relaxed text-ink/80 dark:text-paper/80">
+      Alongside running <strong>Sandesh Visuals</strong>, I contribute to
+      <strong> The Student Spot</strong> as a
+      <strong> Community Builder</strong>,
+      <strong> Graphic Designer</strong>, and
+      <strong> Social Media Manager</strong>.
+      My work focuses on building communities, designing brand
+      experiences, managing creative campaigns, and helping students
+      connect with opportunities, innovation, and entrepreneurship.
+    </p>
+  </InteractiveCard>
 
-  <div className="grid gap-4 md:grid-cols-2">
-    <InteractiveCard
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={revealTransition}
-      className="group rounded-2xl border border-ink/10 bg-white/80 p-7 shadow-card transition-all duration-300 hover:border-accent/30 hover:shadow-lg dark:border-paper/10 dark:bg-ink/35"
-    >
-      <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
-        📸
-      </div>
-
-      <h4 className="mb-3 font-display text-2xl font-bold text-ink dark:text-paper">
-        Photography & Videography
-      </h4>
-
-      <p className="text-lg leading-relaxed text-ink/80 dark:text-paper/80">
-        Every frame is captured with purpose. From portraits and events to
-        products and commercial shoots, I focus on storytelling through
-        composition, lighting, movement, and cinematic visuals that
-        connect with people and elevate brands.
-      </p>
-    </InteractiveCard>
-
-    <InteractiveCard
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ ...revealTransition, delay: 0.06 }}
-      className="group rounded-2xl border border-ink/10 bg-white/80 p-7 shadow-card transition-all duration-300 hover:border-accent/30 hover:shadow-lg dark:border-paper/10 dark:bg-ink/35"
-    >
-      <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
-        🎨
-      </div>
-
-      <h4 className="mb-3 font-display text-2xl font-bold text-ink dark:text-paper">
-        Design & Content Creation
-      </h4>
-
-      <p className="text-lg leading-relaxed text-ink/80 dark:text-paper/80">
-        From brand identities and social media creatives to reels,
-        advertisements, thumbnails, and promotional campaigns, I design
-        content that is visually engaging, strategically crafted, and
-        built to make brands memorable in today's digital world.
-      </p>
-    </InteractiveCard>
-  </div>
-</motion.div>
-
-      <motion.div
+</div>
+<motion.div
   initial={{ opacity: 0, y: 24 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
@@ -296,97 +241,119 @@ export default function About() {
 
   <div className="mb-10 grid gap-6 lg:grid-cols-5">
 
-    <motion.div
-  initial={{ opacity: 0, x: -16 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: true }}
-  transition={revealTransition}
-  className="space-y-4 rounded-2xl border border-ink/10 bg-white/80 p-7 shadow-card dark:border-paper/10 dark:bg-ink/35 lg:col-span-3"
->
-  <motion.p
-    initial={{ opacity: 0, y: 12 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ ...revealTransition, delay: 0.03 }}
-    className="leading-relaxed text-ink/80 dark:text-paper/80"
-  >
-    Alongside building <strong className="text-ink dark:text-paper">Sandesh Visuals</strong>,
-    I contribute to <strong className="text-ink dark:text-paper">The Student Spot</strong>
-    as a <strong className="text-ink dark:text-paper">Community Builder, Graphic Designer, and Social Media Manager</strong>.
-    I create impactful visual content, design brand assets, manage social media campaigns,
-    and help build a thriving student-to-founder ecosystem.
-  </motion.p>
+    {/* Story */}
 
-  <motion.p
-    initial={{ opacity: 0, y: 12 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ ...revealTransition, delay: 0.09 }}
-    className="leading-relaxed text-ink/80 dark:text-paper/80"
-  >
-    These experiences have strengthened my ability to combine creativity,
-    branding, storytelling, and community engagement. Whether working on
-    commercial projects through Sandesh Visuals or creating campaigns for
-    The Student Spot, my focus is always on delivering visuals that
-    inspire, connect, and create lasting impact.
-  </motion.p>
-</motion.div>
+    <motion.div
+      initial={{ opacity: 0, x: -16 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={revealTransition}
+      className="space-y-6 rounded-2xl border border-ink/10 bg-white/80 p-7 shadow-card dark:border-paper/10 dark:bg-ink/35 lg:col-span-3"
+    >
+
+      <div>
+        <h4 className="mb-3 font-display text-2xl font-bold">
+          Sandesh Visuals
+        </h4>
+
+        <p className="leading-relaxed text-ink/80 dark:text-paper/80">
+          Sandesh Visuals represents my passion for visual storytelling,
+          photography, videography, graphic design, video editing, and
+          content creation. Every project is built around creativity,
+          strategy, and attention to detail, helping brands communicate
+          their stories through meaningful visuals.
+        </p>
+      </div>
+
+      <div className="h-px bg-gradient-to-r from-accent/20 to-transparent" />
+
+      <div>
+        <h4 className="mb-3 font-display text-2xl font-bold">
+          The Student Spot
+        </h4>
+
+        <p className="leading-relaxed text-ink/80 dark:text-paper/80">
+          Beyond my creative brand, I actively contribute to
+          <strong> The Student Spot</strong> as a
+          <strong> Community Builder</strong>,
+          <strong> Graphic Designer</strong>, and
+          <strong> Social Media Manager</strong>.
+          My responsibilities include designing visual identities,
+          managing creative campaigns, producing digital content,
+          organizing community initiatives, and helping students connect
+          with opportunities, innovation, and entrepreneurship.
+        </p>
+      </div>
+
+      <div className="h-px bg-gradient-to-r from-accent/20 to-transparent" />
+
+      <p className="leading-relaxed text-ink/80 dark:text-paper/80">
+        Together, these experiences have shaped my expertise in branding,
+        creative direction, storytelling, digital marketing, and
+        community building. Every project challenges me to learn,
+        innovate, and create meaningful experiences that inspire people
+        and deliver lasting impact.
+      </p>
+
+    </motion.div>
+
+    {/* Stats */}
 
     <div className="grid grid-cols-1 gap-3 lg:col-span-2">
+
       <motion.div
-        initial={{ opacity: 0, x: 26, scale: 0.96 }}
-        whileInView={{ opacity: 1, x: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.45 }}
-        whileHover={{ y: -4, scale: 1.01 }}
-        whileTap={{ scale: 0.99 }}
-        transition={{ ...revealTransition, duration: 0.6 }}
-        className="flex items-center gap-5 rounded-xl border border-ink/10 bg-white/80 p-5 transition-all duration-300 hover:border-accent/30 dark:border-paper/10 dark:bg-ink/35"
+        initial={{ opacity: 0, x: 26 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={revealTransition}
+        whileHover={{ scale: 1.02 }}
+        className="rounded-xl border border-ink/10 bg-white/80 p-5 shadow-card dark:border-paper/10 dark:bg-ink/35"
       >
-        <p className="min-w-[100px] font-display text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+        <p className="font-display text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
           <CountUp end={150} suffix="+" />
         </p>
 
-        <p className="text-sm leading-tight text-ink/65 dark:text-paper/65">
-          Creative Projects
+        <p className="mt-2 text-sm text-ink/65 dark:text-paper/65">
+          Creative Projects Delivered
         </p>
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, x: 26, scale: 0.96 }}
-        whileInView={{ opacity: 1, x: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.45 }}
-        whileHover={{ y: -4, scale: 1.01 }}
-        whileTap={{ scale: 0.99 }}
-        transition={{ ...revealTransition, delay: 0.08, duration: 0.6 }}
-        className="flex items-center gap-5 rounded-xl border border-ink/10 bg-white/80 p-5 transition-all duration-300 hover:border-accent/30 dark:border-paper/10 dark:bg-ink/35"
+        initial={{ opacity: 0, x: 26 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ ...revealTransition, delay: 0.08 }}
+        whileHover={{ scale: 1.02 }}
+        className="rounded-xl border border-ink/10 bg-white/80 p-5 shadow-card dark:border-paper/10 dark:bg-ink/35"
       >
-        <p className="min-w-[100px] font-display text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-          <CountUp end={50} suffix="+" />
+        <p className="font-display text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+          <CountUp end={25} suffix="+" />
         </p>
 
-        <p className="text-sm leading-tight text-ink/65 dark:text-paper/65">
-          Happy Clients
+        <p className="mt-2 text-sm text-ink/65 dark:text-paper/65">
+          Brands, Businesses & Clients
         </p>
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, x: 26, scale: 0.96 }}
-        whileInView={{ opacity: 1, x: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.45 }}
-        whileHover={{ y: -4, scale: 1.01 }}
-        whileTap={{ scale: 0.99 }}
-        transition={{ ...revealTransition, delay: 0.16, duration: 0.6 }}
-        className="flex items-center gap-5 rounded-xl border border-ink/10 bg-white/80 p-5 transition-all duration-300 hover:border-accent/30 dark:border-paper/10 dark:bg-ink/35"
+        initial={{ opacity: 0, x: 26 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ ...revealTransition, delay: 0.16 }}
+        whileHover={{ scale: 1.02 }}
+        className="rounded-xl border border-ink/10 bg-white/80 p-5 shadow-card dark:border-paper/10 dark:bg-ink/35"
       >
-        <p className="min-w-[100px] font-display text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-          <CountUp end={6} suffix="+" />
+        <p className="font-display text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+          <CountUp end={20000} suffix="+" />
         </p>
 
-        <p className="text-sm leading-tight text-ink/65 dark:text-paper/65">
-          Creative Services
+        <p className="mt-2 text-sm text-ink/65 dark:text-paper/65">
+          Community Reach Through The Student Spot
         </p>
       </motion.div>
+
     </div>
+
   </div>
 </motion.div>
 
@@ -397,8 +364,7 @@ export default function About() {
   transition={revealTransition}
   className="mb-5 font-display text-lg font-semibold text-ink dark:text-paper"
 >
-  Every project at Sandesh Visuals follows a creative process designed to
-  deliver impactful, high-quality visuals.
+  Every successful project begins with understanding the story behind the brand. My creative process combines strategy, planning, production, design, and refinement to deliver visuals that are both impactful and memorable.
 </motion.p>
 
 <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -561,10 +527,7 @@ export default function About() {
     transition={revealTransition}
     className="mb-8 text-lg font-semibold leading-relaxed text-ink dark:text-paper"
   >
-    Every project is an opportunity to create something meaningful.
-    Whether it's a brand identity, cinematic film, social media
-    campaign, or commercial shoot, my goal is to transform ideas into
-    visuals that connect, inspire, and leave a lasting impression.
+    I believe great design is more than aesthetics—it's about communication, emotion, and purpose. Whether I'm designing a brand identity, directing a commercial shoot, creating social media content, or contributing to The Student Spot, my goal is always to create work that connects with people and creates lasting value.
   </motion.p>
 
   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -587,8 +550,7 @@ export default function About() {
       </p>
 
       <p className="text-sm text-ink/70 dark:text-paper/70">
-        Crafting bold visuals, brand identities, posters, and digital
-        creatives that help businesses stand out.
+        Creating brand identities, marketing materials, digital creatives, and visual systems that help businesses build a strong and recognizable presence.
       </p>
     </InteractiveCard>
 
@@ -610,8 +572,7 @@ export default function About() {
       </p>
 
       <p className="text-sm text-ink/70 dark:text-paper/70">
-        Producing professional photography, videography, and edited
-        content that captures emotion and tells memorable stories.
+        Producing professional photography, videography, and edited content that captures emotion, communicates stories, and strengthens brand identity.
       </p>
     </InteractiveCard>
 
@@ -629,12 +590,11 @@ export default function About() {
       </div>
 
       <p className="mb-2 font-semibold text-ink dark:text-paper">
-        Building Brands
+        Building Brands & Communities
       </p>
 
       <p className="text-sm text-ink/70 dark:text-paper/70">
-        Helping businesses and creators grow through strategic visual
-        content, branding, and engaging digital experiences.
+        Helping businesses, creators, and student communities grow through strategic branding, engaging content, visual storytelling, and meaningful digital experiences.
       </p>
     </InteractiveCard>
 

@@ -11,9 +11,10 @@ export default {
         mint: '#1f7a6c'
       },
       fontFamily: {
-        display: ['"Cormorant Garamond"', 'serif'],
-        sans: ['"Manrope"', 'sans-serif']
-      },
+  display: ['"Space Grotesk"', 'sans-serif'],
+  heading: ['"Space Grotesk"', 'sans-serif'],
+  sans: ['"DM Sans"', 'sans-serif']
+}
       boxShadow: {
         card: '0 20px 40px rgba(13, 17, 23, 0.12)'
       }
