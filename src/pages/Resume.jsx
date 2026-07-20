@@ -26,20 +26,32 @@ function renderLanguageLogo(code) {
   }
 }
 const skillMeter = [
-  { label: 'Full Stack Development', value: 85 },
-  { label: 'Photography', value: 95 },
-  { label: 'Graphic Design', value: 88 },
-  { label: 'Content Creation', value: 80 }
+  { label: 'Graphic Design', value: 98 },
+  { label: 'Photography', value: 98 },
+  { label: 'Videography', value: 96 },
+  { label: 'Video Editing', value: 95 },
+  { label: 'Content Creation', value: 80 },
+    { label: 'Full Stack Development', value: 85 }
 ];
 const skillTags = [
+  'Adobe Photoshop',
+  'Adobe Premiere Pro',
+  'Adobe After Effects',
+  'Lightroom',
+  'Canva',
+  'Photography',
+  'Videography',
+  'Content Creation',
+  'Brand Identity',
+  'Social Media Design',
+  'Color Grading',
+  'Reels Editing',
+  'Visual Storytelling',
+  'Meta Business Suite',
   'Full Stack Development',
   'Bootstrap',
   'n8n',
-  'Meta Business Suite',
-  'Photoshop',
-  'Premiere Pro',
   'Git',
-  'MS Office'
 ];
 import { motion } from 'framer-motion';
 import InteractiveCard from '../components/InteractiveCard';
@@ -67,15 +79,28 @@ const education = [
 
 const experience = [
   {
-    role: 'The Student Spot - Student Community Platform',
-    period: 'Current (In Progress)',
-    detail: 'Building a multi-functional platform for students with authentication, organized resources, modern UX, scalable routing, and AI-assistant planning.',
-    highlights: [
-      'Implemented responsive frontend modules using React and Tailwind CSS.',
-      'Designed scalable platform structure with focus on usability and growth.',
-      'Integrated planning for smart assistant support and workflow automation.'
-    ]
-  },
+  role: "Founder & Creative Director",
+  period: "Sandesh Visuals • Present",
+  detail:
+    "Leading photography, videography, graphic design, branding, and social media content creation for businesses, creators, and organizations.",
+  highlights: [
+    "Produced professional brand campaigns and commercial visuals.",
+    "Created high-performing social media content and reels.",
+    "Designed logos, posters, branding assets, and marketing creatives."
+  ]
+},
+  {
+  role: "Creative Lead • Graphic Designer • Community Builder",
+  period: "The Student Spot • Present",
+  detail:
+    "Contributing to The Student Spot by leading creative design, visual branding, content creation, and community-building initiatives that empower students, startups, and young founders.",
+
+  highlights: [
+    "Created visual identities, marketing campaigns, posters, presentations, and digital assets.",
+    "Produced and managed social media content, reels, and promotional campaigns across multiple platforms.",
+    "Supported community growth through events, collaborations, partnerships, and student engagement initiatives."
+  ]
+},
       {
       role: 'MERN Stack Intern',
       period: 'careerx.club',
@@ -174,9 +199,11 @@ const languageSkills = [
 ];
 
 const achievements = [
-  'Completed Web Development Certification and Internship at ODCET Technologies (E-Cell, IIT Hyderabad).',
-  'State-Level Chess Player (Government recognized) with strong strategic and analytical thinking.',
-  'Built practical projects that combine development, design, and automation for real-world use cases.'
+  "Founded Sandesh Visuals creative brand.",
+  "Designed 500+ digital creatives, posters and branding assets.",
+  "Produced photography, videography and commercial content for multiple clients.",
+  "Creative Lead, Graphic Designer & Community Builder at The Student Spot.",
+  "State-Level Chess Player.",
 ];
 
 

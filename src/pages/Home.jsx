@@ -4,19 +4,20 @@ import { Link } from 'react-router-dom';
 import { heroImageUrl, socialLinks } from '../data/siteContent';
 
 const highlightStats = [
-  { value: '1500+', label: 'Graphic Designs' },
+  { value: '200+', label: 'Graphic Designs' },
   { value: '150+', label: 'Photoshoots' },
-  { value: '5+', label: 'Real-World Projects' },
-  { value: '1+', label: 'Internship Experience' },
+  // { value: '5+', label: 'Real-World Projects' },
+  // { value: '1+', label: 'Internship Experience' },
   { value: 'India', label: 'Based In' }
 ];
 
 const rotatingRoles = [
-  'Full Stack Developer',
   'Graphic Designer',
   'Video Editor',
-  'Photography & Video',
+  'Photography',
+  'Videography',
   'Social Media Editor',
+  'Content Creator',
   'Community Builder'
 ];
 
@@ -28,6 +29,46 @@ export default function Home() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [typedText, setTypedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+
+  const rotatingIdentity = [
+  "Vengala",
+  "Visuals",
+];
+
+const [identityIndex, setIdentityIndex] = useState(0);
+const [typedIdentity, setTypedIdentity] = useState("");
+const [isDeletingIdentity, setIsDeletingIdentity] = useState(false);
+
+const longestIdentity = rotatingIdentity.reduce((a, b) =>
+  a.length > b.length ? a : b
+);
+
+useEffect(() => {
+  const current = rotatingIdentity[identityIndex];
+  const speed = isDeletingIdentity ? 45 : 90;
+
+  let timer;
+
+  if (!isDeletingIdentity && typedIdentity === current) {
+    timer = setTimeout(() => {
+      setIsDeletingIdentity(true);
+    }, 1200);
+  } else if (isDeletingIdentity && typedIdentity === "") {
+    timer = setTimeout(() => {
+      setIsDeletingIdentity(false);
+      setIdentityIndex((prev) => (prev + 1) % rotatingIdentity.length);
+    }, 250);
+  } else {
+    timer = setTimeout(() => {
+      const next =
+        typedIdentity.length + (isDeletingIdentity ? -1 : 1);
+
+      setTypedIdentity(current.slice(0, next));
+    }, speed);
+  }
+
+  return () => clearTimeout(timer);
+}, [typedIdentity, isDeletingIdentity, identityIndex]);
 
   useEffect(() => {
     const currentRole = rotatingRoles[roleIndex];
@@ -73,8 +114,20 @@ export default function Home() {
             </p>
 
             <h1 className="font-display text-4xl leading-[0.95] md:text-7xl">
-              Hi, I&apos;m <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Sandesh Vengala</span>
-            </h1>
+  Hi, I&apos;m{" "}
+
+  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+    Sandesh
+  </span>{" "}
+
+  <span className="relative inline-block min-w-[8ch]">
+    <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+      {typedIdentity}
+    </span>
+
+    <span className="ml-1 inline-block h-[0.9em] w-[2px] bg-yellow-400 animate-pulse align-middle" />
+  </span>
+</h1>
 
             <div className="mt-5 text-sm font-semibold tracking-[0.04em] text-ink/70 dark:text-paper/75 md:text-base">
               <span className="relative inline-flex h-7 items-center align-middle text-accent md:h-8">
@@ -87,10 +140,67 @@ export default function Home() {
             </div>
 
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink/75 dark:text-paper/80">
-              Building at the intersection of technology, creativity, and practical execution. I design and develop
-              experiences that blend full stack development, visual design, and storytelling to turn ideas into
-              real-world digital products.
+             Capturing stories through photography, videography, and creative design. At Sandesh Visuals, we create cinematic visuals, compelling brand content, and impactful digital experiences that help individuals and businesses tell their stories with creativity, authenticity, and purpose.
+
             </p>
+
+              <div className="mt-8">
+  <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-ink/60 dark:text-paper/60">
+    Building Brands
+  </p>
+
+  <div className="flex flex-wrap items-center gap-5">
+
+    {/* Sandesh Visuals */}
+    <a
+      href="https://instagram.com/sandeshvisuals"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-center gap-4 rounded-2xl border border-ink/10 bg-white/70 px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-card dark:border-paper/10 dark:bg-ink/35"
+    >
+      <img
+        src="/assets/logos/sandeshvisuals.png"
+        alt="Sandesh Visuals"
+        className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+      />
+
+      <div>
+        <p className="font-semibold text-ink dark:text-paper">
+          Sandesh Visuals
+        </p>
+
+        <p className="text-xs text-ink/60 dark:text-paper/60">
+          Photography • Videography • Design
+        </p>
+      </div>
+    </a>
+
+    {/* The Student Spot */}
+    <a
+      href="https://instagram.com/the_studentspot"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-center gap-4 rounded-2xl border border-ink/10 bg-white/70 px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-card dark:border-paper/10 dark:bg-ink/35"
+    >
+      <img
+        src="/assets/logos/thestudentspot.png"
+        alt="The Student Spot"
+        className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+      />
+
+      <div>
+        <p className="font-semibold text-ink dark:text-paper">
+          The Student Spot
+        </p>
+
+        <p className="text-xs text-ink/60 dark:text-paper/60">
+          Student-to-Founder Ecosystem
+        </p>
+      </div>
+    </a>
+
+  </div>
+</div>
 
             <div className="mt-10 flex flex-wrap gap-3 sm:gap-4">
               <Link
