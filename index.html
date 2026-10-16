@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Graphic design portfolio showcasing brand, web, social, and print case studies."
+    />
+    <link rel="icon" type="image/jpeg" href="/assets/images/designer-profile.jpg" />
+    <link rel="apple-touch-icon" href="/assets/images/designer-profile.jpg" />
+    <script>
+      // Restore route captured by 404 fallback on static hosts.
+      const redirectPath = sessionStorage.getItem('spa-redirect-path');
+      if (redirectPath) {
+        sessionStorage.removeItem('spa-redirect-path');
+        window.history.replaceState(null, '', redirectPath);
+      }
+    </script>
+    <title>Sandesh Vengala</title>
+  </head>
+  <body class="bg-ink text-paper">
+    <div id="root"></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+.hero-avatar{
+    width:100%;
+    height:100%;
+    perspective:1500px;
+    cursor:pointer;
+}
+
+.hero-avatar-inner{
+    width:100%;
+    height:100%;
+    position:relative;
+
+    transform-style:preserve-3d;
+
+    transition:
+        transform .8s cubic-bezier(.23,1,.32,1);
+}
+
+.hero-avatar.flipped .hero-avatar-inner{
+    transform:rotateY(180deg);
+}
+
+@media (hover:hover){
+
+.hero-avatar:hover .hero-avatar-inner{
+    transform:rotateY(180deg);
+}
+
+}
+
+.hero-avatar-front,
+.hero-avatar-back{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    border-radius:50%;
+    overflow:hidden;
+
+    backface-visibility:hidden;
+
+}
+
+.hero-avatar-front img,
+.hero-avatar-back img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .5s;
+}
+
+.hero-avatar:hover img{
+    transform:scale(1.06);
+}
+
+.hero-avatar-back{
+
+    transform:rotateY(180deg);
+
+}

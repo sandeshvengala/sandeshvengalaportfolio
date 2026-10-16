@@ -1,0 +1,15 @@
+﻿<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'>
+  <defs>
+    <linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#f1f5f9'/>
+      <stop offset='100%' stop-color='#e2e8f0'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='800' fill='url(#bg)'/>
+  <rect x='70' y='70' width='1060' height='660' rx='24' fill='rgba(255,255,255,0.75)' stroke='rgba(71,85,105,0.18)' stroke-width='2'/>
+  <rect x='110' y='120' width='540' height='22' rx='11' fill='#94a3b8'/>
+  <rect x='110' y='160' width='720' height='16' rx='8' fill='#cbd5e1'/>
+  <rect x='110' y='220' width='980' height='360' rx='20' fill='rgba(148,163,184,0.18)'/>
+  <text x='120' y='640' font-family='Georgia, serif' font-size='52' fill='#1e293b' font-weight='700'>Wedding Design</text>
+  <text x='120' y='688' font-family='Segoe UI, Arial, sans-serif' font-size='28' fill='#334155'>Elegant details with soft structure</text>
+</svg>

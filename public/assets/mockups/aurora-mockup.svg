@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#1b2531"/>
+  <rect x="110" y="90" width="980" height="620" rx="32" fill="#f6f5f2"/>
+  <text x="170" y="190" font-family="Arial, sans-serif" font-size="52" fill="#0d1117">Aurora Skincare Rebrand</text>
+  <text x="170" y="255" font-family="Arial, sans-serif" font-size="28" fill="#4a5562">Mockup Placeholder</text>
+  <circle cx="980" cy="570" r="120" fill="#ff6a3d" fill-opacity="0.5"/>
+</svg>

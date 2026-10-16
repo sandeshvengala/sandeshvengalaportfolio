@@ -1,0 +1,13 @@
+Kim Adebayo
+Graphic Designer
+
+Email: hello@kimportfolio.com
+Website: Portfolio
+
+Experience Highlights:
+- Branding and identity systems
+- Web and landing page design
+- Social campaign design and art direction
+- Packaging design for retail products
+
+Replace this file with your real resume PDF at public/assets/resume.pdf if desired.

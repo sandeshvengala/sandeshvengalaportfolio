@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">About Portrait Placeholder</title>
+  <desc id="desc">Portrait placeholder for About section.</desc>
+  <rect width="900" height="900" fill="#18212d"/>
+  <rect x="90" y="90" width="720" height="720" rx="48" fill="#f6f5f2" fill-opacity="0.96"/>
+  <circle cx="450" cy="365" r="120" fill="#ff6a3d" fill-opacity="0.75"/>
+  <rect x="305" y="500" width="290" height="180" rx="90" fill="#6ed3b7" fill-opacity="0.75"/>
+  <text x="450" y="770" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" fill="#0d1117">Designer Portrait</text>
+</svg>
